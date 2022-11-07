@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Máy tính</title>
+  </head>
+  <body>
+    <input type="text" id="num1" />
+    <input type="text" id="num2" />
+    <br /><br />
+    <button onclick="add()">Addition (+)</button>
+    <button onclick="subtract()">Subtraction (-)</button>
+    <button onclick="multy()">Multiplication (x)</button>
+    <button onclick="divise()">Division (/)</button><br />
+    <br />
+    <div id="result"></div>
+    <br>
+    <br>
+    <h1>Bảng tính</h1>
+      <table>
+        <tr>
+          <td colspan="4"><input id="show" type="text" disabled size="11"></input></td>
+        </tr>
+        <tr>
+          <td><button value="+" onclick="show('+')">+</button></td>
+          <td><button value="-" onclick="show('-')">-</button></td>
+          <td><button value="*" onclick="show('x')">x</button></td>
+          <td><button value="/" onclick="show('/')">/</button></td>
+        </tr>
+        <tr>
+          <td><button value="7" onclick="show('7')">7</button></td>
+          <td><button value="8" onclick="show('8')">8</button></td>
+          <td><button value="9" onclick="show('9')">9</button></td>
+          <td><button value="0" onclick="show('0')">0</button></td>
+        </tr>
+        <tr>
+          <td><button value="4" onclick="show('4')">4</button></td>
+          <td><button value="5" onclick="show('5')">5</button></td>
+          <td><button value="6" onclick="show('6')">6</button></td>
+          <td><button value="C" onclick="clearScreen()">C</button></td>
+        </tr>
+        <tr>
+          <td><button value="1" onclick="show('1')">1</button></td>
+          <td><button value="2" onclick="show('2')">2</button></td>
+          <td><button value="3" onclick="show('3')">3</button></td>
+          <td><button value="=" onclick="calculate()">=</button></td>
+        </tr>
+      </table>
+
+    <script>
+      //bai 1
+      let inp1 = document.getElementById("num1");
+      let inp2 = document.getElementById("num2");
+
+      function add() {
+        let value1 = +inp1.value;
+        let value2 = +inp2.value;
+        let result = value1 + value2;
+        document.getElementById("result").innerHTML =
+          "<h3>Result addition: " + result + "</h3>";
+      }
+
+      function subtract() {
+        let value1 = +inp1.value;
+        let value2 = +inp2.value;
+        let result = value1 - value2;
+        document.getElementById("result").innerHTML =
+          "<h3>Result subtraction: " + result + "</h3>";
+      }
+
+      function multy() {
+        let value1 = +inp1.value;
+        let value2 = +inp2.value;
+        let result = value1 * value2;
+        document.getElementById("result").innerHTML =
+          "<h3>Result multiplication: " + result + "</h3>";
+      }
+      
+      function divise() {
+        let value1 = +inp1.value;
+        let value2 = +inp2.value;
+        let result = value1 / value2;
+        document.getElementById("result").innerHTML =
+          "<h3>Result division: " + result + "</h3>";
+      }
+
+      //bai 2
+      let result = document.getElementById('show');
+      function show(value){
+        result.value += value;
+      }
+
+      function clearScreen(){
+        result.value = '';
+      }
+
+      function calculate(){
+        let kq = eval(result.value);
+        result.value = kq;
+      }
+    </script>
+  </body>
+</html>
