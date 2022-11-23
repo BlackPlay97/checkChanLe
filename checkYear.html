@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiểm tra năm nhuận</title>
+  </head>
+  <body>
+    <script>
+      let inp = +prompt("Nhập năm");
+      if (inp % 4 == 0) {
+        if (inp % 100 != 0) {
+          alert("Năm " + inp + " nhuận");
+        } else if (inp % 400 != 0) {
+          alert("Năm " + inp + " không nhuận");
+        } else {
+          alert("Năm " + inp + " nhuận");
+        }
+      } else {
+        alert("Năm " + inp + " không nhuận");
+      }
+    </script>
+  </body>
+</html>
